@@ -15,5 +15,8 @@
   "bugs": {
     "url": "https://github.com/isakjanov/smart_buy_backend/issues"
   },
-  "homepage": "https://github.com/isakjanov/smart_buy_backend#readme"
+  "homepage": "https://github.com/isakjanov/smart_buy_backend#readme",
+  "dependencies": {
+    "express": "^4.16.3"
+  }
 }
