@@ -1,0 +1,6 @@
+CREATE TABLE users (
+	id UUID DEFAULT uuid_generate_v4() PRIMARY KEY NOT NULL,
+	email VARCHAR(24) NOT NULL,
+	name VARCHAR(24) NOT NULL,
+	password VARCHAR(24) NOT NULL
+);
