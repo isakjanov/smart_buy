@@ -1,0 +1,24 @@
+#!/usr/bin/env node
+"use strict";
+
+//module dependencies
+var app = require("../lib/app");
+var debug = require('debug')('myapp:server');
+var http = require("http");
+
+var port = 3000;
+
+app.set('port', port);
+
+var server = http.createServer(app);
+
+server.listen(port);
+server.on('listening', onListening);
+
+function onListening() {
+  var addr = server.address();
+  var bind = typeof addr === "string"
+    ? "pipe " + addr
+    : "port " + addr.port;
+  debug("Listening on " + bind);
+}
