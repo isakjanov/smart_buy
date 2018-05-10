@@ -1,12 +1,10 @@
 import express from 'express';
-import UserService from './services/user';
+import { indexRouter } from './routes/index';
+import { userRouter } from './routes/user';
 
 const app = express();
-const userService = new UserService();
 
-app.get('/', (req, res) => {
-	userService.getUsers()
-		.then( users => res.send({ users }));
-});
+app.use('/', indexRouter);
+app.use('/user', userRouter);
 
 app.listen(3000, () => console.log('Example app listening on port 3000'));
