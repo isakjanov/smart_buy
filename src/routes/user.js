@@ -10,7 +10,13 @@ router.get('/', (req, res) => {
 });
 
 router.post('/create', (req, res) => {
-	res.send({ action: 'create user'});
+	const {email, name, password} = req.body;
+
+	console.log(req.body);
+
+	userService.createUser({email, name, password})
+		.then(result => res.send({ result }))
+		.catch(error => res.send(error));
 });
 
 export { router as userRouter };
